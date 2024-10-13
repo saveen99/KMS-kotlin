@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HomeFragment">
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/dashoard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/backimage"
+        tools:context=".Dashboard">
+
+
+
+
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="ACTIVE KEYS"
+            android:id="@+id/activekey"
+            android:textSize="20sp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/dark"
+            android:textColor="@color/white"
+            app:cornerRadius="15dp"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="ADD KEYS"
+            android:id="@+id/addkey"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/dark"
+            android:textColor="@color/white"
+            app:cornerRadius="15dp"/>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="HISTORY"
+            android:id="@+id/history"
+            android:textSize="20sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@color/dark"
+            android:textColor="@color/white"
+            app:cornerRadius="15dp"/>
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/logout"
+            android:textSize="18sp"
+            android:text="Logout"
+            android:textColor="@color/cool"
+            android:backgroundTint="@color/red"
+            android:drawableLeft="@drawable/baseline_logout_24"
+            android:layout_marginTop="50dp"
+            app:cornerRadius = "20dp"/>
+
+
+
+    </LinearLayout>
+
+</FrameLayout>

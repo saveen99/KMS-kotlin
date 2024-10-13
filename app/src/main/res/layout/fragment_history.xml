@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HistoryFragment">
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/history_dashboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/backimage"
+        tools:context=".HistoryDashboard">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Key 1"
+            android:id="@+id/key1"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/cool"
+            app:cornerRadius = "15dp"
+            android:textColor="@color/black" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Key 2"
+            android:id="@+id/key2"
+            android:textSize="25dp"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/cool"
+            app:cornerRadius = "15dp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+</FrameLayout>
