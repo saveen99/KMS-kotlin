@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.thekeyapp.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.thekeyapp.fragments.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_activeKeyFragment"
+            app:destination="@id/activeKeyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_addKeyFragment"
+            app:destination="@id/addKeyFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_historyFragment"
+            app:destination="@id/historyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/activeKeyFragment"
+        android:name="com.example.thekeyapp.fragments.ActiveKeyFragment"
+        android:label="fragment_active_key"
+        tools:layout="@layout/fragment_active_key" >
+        <action
+            android:id="@+id/action_activeKeyFragment_to_activeKeyDetailsFragment2"
+            app:destination="@id/activeKeyDetailsFragment2" />
+        <action
+            android:id="@+id/action_activeKeyFragment_to_editActiveKeysFragment"
+            app:destination="@id/editActiveKeysFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addKeyFragment"
+        android:name="com.example.thekeyapp.fragments.AddKeyFragment"
+        android:label="fragment_add_key"
+        tools:layout="@layout/fragment_add_key" >
+        <action
+            android:id="@+id/action_addKeyFragment_to_activeKeyFragment"
+            app:destination="@id/activeKeyFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.example.thekeyapp.fragments.HistoryFragment"
+        android:label="fragment_history"
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_historyFragment_to_historyKeyDetailsFragment"
+            app:destination="@id/historyKeyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/activeKeyDetailsFragment2"
+        android:name="com.example.thekeyapp.fragments.ActiveKeyDetailsFragment"
+        android:label="fragment_active_key_details"
+        tools:layout="@layout/fragment_active_key_details" >
+        <action
+            android:id="@+id/action_activeKeyDetailsFragment2_to_historyFragment"
+            app:destination="@id/historyFragment" />
+        <action
+            android:id="@+id/action_activeKeyDetailsFragment2_to_editActiveKeysFragment"
+            app:destination="@id/editActiveKeysFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/historyKeyDetailsFragment"
+        android:name="com.example.thekeyapp.fragments.HistoryKeyDetailsFragment"
+        android:label="fragment_history_key_details"
+        tools:layout="@layout/fragment_history_key_details" />
+    <fragment
+        android:id="@+id/editActiveKeysFragment"
+        android:name="com.example.thekeyapp.fragments.EditActiveKeysFragment"
+        android:label="EditActiveKeysFragment" >
+        <action
+            android:id="@+id/action_editActiveKeysFragment_to_activeKeyDetailsFragment2"
+            app:destination="@id/activeKeyDetailsFragment2" />
+
+        <argument
+            android:name="key"
+            app:argType="com.example.thekeyapp.model.Key"
+            app:nullable="true"/>
+    </fragment>
+</navigation>

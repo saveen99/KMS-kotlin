@@ -14,14 +14,22 @@ import android.widget.Button
 import android.widget.PopupWindow
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.example.thekeyapp.database.KeyDatabase
+import com.example.thekeyapp.repository.KeyRepository
+import com.example.thekeyapp.viewmodel.KeyViewModel
+import com.example.thekeyapp.viewmodel.KeyViewModelFactory
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var keyViewModel: KeyViewModel
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
-
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
@@ -29,30 +37,12 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        // Reference to the button that will trigger the popup
-        val showPopupButton = findViewById<Button>(R.id.show_popup_button)
+        setupViewModel()
+    }
 
-        showPopupButton.setOnClickListener {
-            // Inflate the popup_layout.xml
-            val inflater: LayoutInflater = layoutInflater
-            val popupView: View = inflater.inflate(R.layout.fragment_active_key_details, null)
-
-            // Create the PopupWindow
-            val popupWindow = PopupWindow(
-                popupView,
-                android.widget.LinearLayout.LayoutParams.WRAP_CONTENT,
-                android.widget.LinearLayout.LayoutParams.WRAP_CONTENT,
-                true // Focusable
-            )
-
-            // Show the popup window at the center
-            popupWindow.showAtLocation(it, Gravity.CENTER, 0, 0)
-
-            // Close button inside the popup
-            val closeButton = popupView.findViewById<Button>(R.id.close_button)
-            closeButton.setOnClickListener {
-                popupWindow.dismiss() // Close the popup window
-            }
-        }
+    private fun setupViewModel() {
+        val keyRepository = KeyRepository(KeyDatabase(this))
+        val viewModelProviderFactory = KeyViewModelFactory(application, keyRepository)
+        keyViewModel = ViewModelProvider(this, viewModelProviderFactory)[KeyViewModel::class.java]
     }
 }

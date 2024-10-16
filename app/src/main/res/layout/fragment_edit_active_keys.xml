@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp"
+        android:background="@drawable/backimage"
+        tools:context=".UpdateNoteFragment">
+
+        <TextView
+            android:id="@+id/editNoteHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_light"
+            android:text="Edit Keys."
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/red"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/edityName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/editNoteHeading"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/custom_border"
+            android:fontFamily="@font/poppins_light"
+            android:hint="Edit Name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editKeyName"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/editNoteHeading"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/custom_border"
+            android:fontFamily="@font/poppins_light"
+            android:hint="Edit Key Name"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/editNumber"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@id/editNoteHeading"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/custom_border"
+            android:fontFamily="@font/poppins_light"
+            android:hint="Edit Number"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:maxLines="1"
+            android:padding="12dp"
+            android:textSize="20sp" />
+
+
+        <!-- Updated to use MaterialButton for corner radius support -->
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="match_parent"
+            android:layout_height="75dp"
+            android:text="SAVE"
+            android:id="@+id/add"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/dark"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:cornerRadius="15dp"/>
+
+
+    </LinearLayout>
+</layout>
